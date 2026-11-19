@@ -1,5 +1,5 @@
 # Лабораторная работа № 11
-# Класс «Стример»
+# Класс «Стример» и статистика
 
 class Streamer:
     def __init__(self, nickname, subscribers):
@@ -19,8 +19,15 @@ class Streamer:
         return self.total_donates() / len(self.donates)
 
 
+def print_stats(streamer):
+    print(f"Стример: {streamer.nickname}")
+    print(f"Подписчики: {streamer.subscribers}")
+    print(f"Всего донатов: {streamer.total_donates()}")
+    print(f"Средний донат: {streamer.average_donate()}")
+
+
 streamer = Streamer("GolubKin", 1200)
 streamer.add_donate(500)
 streamer.add_donate(150)
 
-print("Код класса Стример загружен")
+print_stats(streamer)
